@@ -32,7 +32,7 @@ package multiThreading;
     public boolean isInterrupted(): Bir thread'in kesilip kesilmediğni test eder.
  */
 
-public class MultiThreading01 {
+public class MT01SingleThreadMultiThread {
     public static void main(String[] args) throws InterruptedException {
         long baslaSingleTh = System.currentTimeMillis();
         System.out.println("=========== SINGLE-THREAD =============");
@@ -52,8 +52,8 @@ public class MultiThreading01 {
         s4.start();
 
         // Bir threading bitmesini beklemek için Join metodu kullanılabilir.
-
-        s4.join();  // s4 threaD'i bittikten sonra geri kalan komutlari çalıştır.
+        s3.join();
+        s4.join();  // s4 thread'i bittikten sonra geri kalan komutlari çalıştır.
         long bitirMultiTh = System.currentTimeMillis();
         System.out.println("Multi-Thread Gecen Sure=" + (bitirMultiTh - baslaMultiTh));
     }
